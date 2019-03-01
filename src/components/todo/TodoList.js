@@ -5,7 +5,8 @@ const todoList = (props) => {
     return props.items.map((item, index)=>
         (
         <li key={index}>
-                {item}
+                <span className={props.isStrike(index)? 'line-through': ''} onClick={()=>props.strike(index)}>{item}</span>
+                <button onClick={()=>props.remove(index)}>remove</button>
         </li>
         )
     )
